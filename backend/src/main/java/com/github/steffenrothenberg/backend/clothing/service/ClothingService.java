@@ -15,8 +15,8 @@ public class ClothingService {
         return clothingRepoInterface.findAll();
     }
 
-    public Clothing addClothing(Clothing myCloathing) {
-        return clothingRepoInterface.save(myCloathing);
+    public Clothing addClothing(Clothing myClothing) {
+        return clothingRepoInterface.save(myClothing);
     }
 
     public Clothing getClothingById(String id) {

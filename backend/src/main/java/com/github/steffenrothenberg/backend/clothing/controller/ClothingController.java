@@ -22,8 +22,8 @@ public class ClothingController {
     }
 
     @PostMapping
-    public Clothing addClothing(@RequestBody Clothing myCloathing) {
-        return clothingService.addClothing(myCloathing);
+    public Clothing addClothing(@RequestBody Clothing myClothing) {
+        return clothingService.addClothing(myClothing);
     }
 
     @GetMapping("{id}")
