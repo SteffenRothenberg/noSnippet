@@ -1,0 +1,31 @@
+.header {
+    font-size: large;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+    padding: 16px;
+}
+
+.navbar {
+    display: flex;
+    gap: 16px;
+    align-items: center;
+}
+
+body {
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+    background-color: #f4f4f9;
+}
+
+@media (max-width: 600px) {
+    .header {
+        flex-direction: column;
+    }
+
+    .navbar {
+        justify-content: center;
+        margin-top: 10px;
+    }
+}
