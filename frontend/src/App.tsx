@@ -1,26 +1,30 @@
-import React from 'react';
-import logo from './logo.svg';
+
 import './App.css';
+import useUser from "./customHooks/useUser";
+import {BrowserRouter} from "react-router-dom";
+import Header from "./header/Header";
 
 function App() {
+  const {user, login, logout, isLoading, createUser} = useUser();
+
+  function handleLogout() {
+    return new Promise<void>((resolve) => {
+      logout();
+      resolve();
+    });
+  }
+
+  // function handleLogin(username: string, password: string) {
+  //   return login(username, password).catch((error) => {
+  //     console.error('An error occurred during login:', error);
+  //   });
+  // }
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+      <BrowserRouter>
+        <div className="App">
+          <Header onLogout={handleLogout}/>
+        </div>
+      </BrowserRouter>
   );
 }
-
 export default App;
