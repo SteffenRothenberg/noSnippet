@@ -27,55 +27,75 @@ export default function Header(props: Props) {
     }
 
     return (
-        <AppBar position="static" sx={{ bgcolor: "#f1f1f1" }}>
-            <Toolbar>
+        <AppBar position="static" sx={{ bgcolor: "#0d0a63" }}>
+            <Toolbar sx={{ justifyContent: "space-between" }}>
+                <Typography
+                    variant="subtitle1"
+                    sx={{
+                        flexGrow: 1,
+                        color: "#ffffff",
+                    }}
+                >
+                    Manage your Wardrobe
+                </Typography>
                 <Typography
                     variant="h5"
                     component="div"
                     sx={{
                         flexGrow: 1,
-                        color: "#ff9900",
+                        color: "#ffffff",
                         marginLeft: "16px",
                         cursor: "pointer",
+                        fontWeight: "bold",
                     }}
                     onClick={handleLogoClick}
                 >
                     noSnippet
-                </Typography>
-                <Typography
-                    variant="subtitle1"
-                    color="textSecondary"
-                    sx={{
-                        flexGrow: 1,
-                        marginCenter: "16px",
-                        color: "#ff9900",
-                    }}
-                >
-                    manage your Wardrobe
                 </Typography>
                 <div className="navbar">
                     <Button
                         component={Link}
                         to="/collection"
                         color="inherit"
-                        sx={{ "&:hover": { backgroundColor: "#ff9900" } }}
+                        sx={{
+                            color: "#ffffff",
+                            marginRight: "8px",
+                            "&:hover": {
+                                backgroundColor: "#4b0082",
+                            },
+                            transition: "background-color 0.3s ease",
+                        }}
                     >
-                        Click here for your Collection
+                        Your Collection
                     </Button>
                     <Button
                         component={NavLink}
                         to="/collection/add"
                         color="inherit"
-                        sx={{ "&:hover": { backgroundColor: "#ff9900" } }}
+                        sx={{
+                            color: "#ffffff",
+                            marginRight: "8px",
+                            "&:hover": {
+                                backgroundColor: "#4b0082",
+                            },
+                            transition: "background-color 0.3s ease",
+                        }}
                     >
-                        create Clothing
+                        Create Clothing
                     </Button>
                     <Button
                         color="inherit"
                         onClick={handleLogout}
-                        sx={{ "&:hover": { backgroundColor: "#ff9900" } }}
+                        sx={{
+                            color: "#ffffff",
+                            marginRight: "8px",
+                            "&:hover": {
+                                backgroundColor: "#4b0082",
+                            },
+                            transition: "background-color 0.3s ease",
+                        }}
                     >
-                        LogOut
+                        Log Out
                     </Button>
                 </div>
             </Toolbar>
