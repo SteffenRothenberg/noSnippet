@@ -3,6 +3,7 @@ import {useState} from "react";
 import useCollection from "../customHooks/UseCollection";
 import {MenuItem, TextField} from "@mui/material";
 import ClothingCard from "../card/ClothingCard";
+import "./Collection.css";
 
 type CollectionProps = {
     collection: Clothing[];
