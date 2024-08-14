@@ -1,7 +1,8 @@
 import {NewClothing} from "../model/Cloathing";
 import {FormEvent, useState} from "react";
 import {useNavigate} from "react-router-dom";
-import {TextField} from "@mui/material";
+import {css, TextField} from "@mui/material";
+import './addClothing.css'
 
 type AddClothingProps = {
     addClothing: (newClothing: NewClothing) => void

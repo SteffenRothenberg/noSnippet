@@ -1,6 +1,6 @@
 
 import './App.css';
-import useUser from "./customHooks/useUser";
+import useUser from "./customHooks/UseUser";
 import {BrowserRouter} from "react-router-dom";
 import Header from "./header/Header";
 
