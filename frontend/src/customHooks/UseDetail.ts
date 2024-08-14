@@ -44,10 +44,10 @@ export default function useDetail(){
             [name]: value,
         }));
     }
-    function handleFormSubmit(event: React.FormEvent<HTMLInputElement>){
+    function handleFormSubmit(event: React.FormEvent<HTMLFormElement>){
         event.preventDefault();
         axios
-            .put("/api/collection/" + id, editedClothing)
+            .put("/api/collection" + id, editedClothing)
             .then((response) => {
             setClothing(response.data);
             setEditing(false);
