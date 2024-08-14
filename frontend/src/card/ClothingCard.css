@@ -1,0 +1,7 @@
+.clothing-card{
+    width: 300px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+
+}
