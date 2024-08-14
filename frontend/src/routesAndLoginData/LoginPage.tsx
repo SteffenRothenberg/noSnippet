@@ -24,7 +24,7 @@ export const LoginPage = (props: Props) => {
         event.preventDefault();
 
         props.onLogin(username, password).then(() => {
-            navigate("/albums");
+            navigate("/collection");
         })
             .catch((error) => {
                 console.error("Error occurred:", error)
@@ -85,7 +85,7 @@ export const LoginPage = (props: Props) => {
                 size="small"
                 onClick={() => navigate(`/signup`)}
             >
-                Anmelden
+                Registrieren
             </Button>
         </FormContainer>
 
