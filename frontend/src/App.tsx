@@ -49,7 +49,7 @@ function App() {
                            element={<Collection collection={collection}/>}/>
                     <Route path="/collection/add"
                            element={<AddClothing addClothing={addClothing}/>}/>
-                    <Route path="/clothing/:id"
+                    <Route path="/collection/:id"
                            element={<ClothingDetailCard deleteClothing={deleteClothing}/>}/>
                 </Route>
             </Routes>

@@ -1,6 +1,6 @@
-import {Clothing} from "../model/Cloathing";
-import {useNavigate} from "react-router-dom";
-import {Button, Card, CardContent,Typography} from "@mui/material";
+import { Clothing } from "../model/Cloathing";
+import { useNavigate } from "react-router-dom";
+import { Button, Card, CardContent, Typography, Box } from "@mui/material";
 import './ClothingCard.css';
 
 type ClothingProps = {
@@ -11,33 +11,34 @@ export default function ClothingCard(props: ClothingProps) {
     const navigate = useNavigate();
 
     return (
-        <Card className="clothing-card">
-            <CardContent sx={{display: "flex", alignItems: "center", maxWidth: "sm", maxHeight: "sm"}}>
-                    <Typography variant="body1" component="p">
-                        Name:
+        <Card className="clothing-card" sx={{ maxWidth: 345, margin: 2 }}>
+            <CardContent>
+                <Typography variant="h6" component="div">
+                    {props.clothing.name}
+                </Typography>
+                <Box sx={{ marginY: 1 }}>
+                    <Typography variant="body1">
+                        <strong>Color:</strong> {props.clothing.color}
                     </Typography>
-                    <Typography variant="body2" component="p">
-                        {props.clothing.name}
+                    <Typography variant="body1">
+                        <strong>Brand:</strong> {props.clothing.brand}
                     </Typography>
-                    <Typography variant="body1" component="p">
-                        Color:
-                    </Typography>
-                    <Typography variant="body2" component="p">
-                        {props.clothing.color}
-                    </Typography>
-                    <Typography variant="body1" component="p">
-                        Brand:
-                    </Typography>
-                    <Typography variant="body2" component="p">
-                        {props.clothing.brand}
-                    </Typography>
+                </Box>
                 <Button
                     onClick={() => navigate("/collection/" + props.clothing.id)}
                     variant="contained"
-                    color="warning"
+                    sx={{
+                        color: 'white',
+                        borderColor: 'darkblue',
+                        backgroundColor: 'darkblue',
+                        '&:hover': {
+                            backgroundColor: 'navy',
+                        },
+                        marginTop: 2
+                    }}
                     className="clothing-card__button"
                 >
-                    Clothing-Details
+                    Clothing Details
                 </Button>
             </CardContent>
         </Card>

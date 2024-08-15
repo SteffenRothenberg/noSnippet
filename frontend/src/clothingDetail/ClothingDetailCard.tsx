@@ -24,7 +24,7 @@ export default function ClothingDetailCard(props: ClothingDetailCardProps){
         if(clothing) {
             props.deleteClothing(clothing.id);
         }
-        navigate("/collection");
+        navigate("/clothing");
     }
     return(
         <Card className="clothing-detail">
@@ -39,7 +39,7 @@ export default function ClothingDetailCard(props: ClothingDetailCardProps){
                                 value={editedClothing.name}
                                 onChange={clothingInputChange}
                                 fullWidth
-                                />
+                            />
                             <TextField
                                 label="Type"
                                 name="type"
@@ -112,10 +112,10 @@ export default function ClothingDetailCard(props: ClothingDetailCardProps){
                             </CardContent>
                             <Grid container spacing={2} justifyContent="space-evenly" mt={2}>
                                 <CardActions>
-                                <Button onClick={editOnClick} variant="contained" color="warning">
-                                </Button>
-                                <Button onClick={onDeleteClick} variant="contained" color="error">
-                                </Button>
+                                    <Button onClick={editOnClick} variant="contained" color="warning">
+                                    </Button>
+                                    <Button onClick={onDeleteClick} variant="contained" color="error">
+                                    </Button>
                                 </CardActions>
                             </Grid>
                         </Container>

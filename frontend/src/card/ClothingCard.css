@@ -1,7 +1,19 @@
-.clothing-card{
-    width: 300px;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
+.clothing-card {
+    width: 300px; /* Breite der Karte */
+    display: flex; /* Flexbox aktivieren */
+    flex-direction: column; /* Layout in einer Spalte */
+    padding: 16px; /* Innenabstand für besseren Abstand zum Inhalt */
+    border-radius: 8px; /* Abgerundete Ecken für die Karte */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Leichter Schatten für Tiefe */
+    margin: 16px; /* Außenabstand für Abstand zwischen den Karten */
+}
 
+.clothing-card__button {
+    margin-top: 16px; /* Abstand zwischen den Textinhalten und dem Button */
+    background-color: darkblue; /* Hintergrundfarbe des Buttons */
+    color: white; /* Textfarbe des Buttons */
+    border: 1px solid darkblue; /* Rahmenfarbe des Buttons */
+    &:hover {
+        background-color: navy; /* Hintergrundfarbe des Buttons beim Hover */
+    }
 }
