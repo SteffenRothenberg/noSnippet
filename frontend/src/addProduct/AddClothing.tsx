@@ -1,7 +1,7 @@
 import {NewClothing} from "../model/Cloathing";
 import {FormEvent, useState} from "react";
 import {useNavigate} from "react-router-dom";
-import {Button, TextField} from "@mui/material";
+import {Button, TextField, Grid} from "@mui/material";
 import './AddClothing.css'
 
 type AddClothingProps = {
@@ -20,7 +20,7 @@ export default function AddClothing(props: AddClothingProps) {
     const navigate = useNavigate()
 
     function onSaveClothing(event: FormEvent<HTMLFormElement>){
-     event.preventDefault()
+        event.preventDefault()
         const newClothing: NewClothing = {
             name: name,
             type: type,
@@ -30,7 +30,7 @@ export default function AddClothing(props: AddClothingProps) {
             brand: brand,
             material: material,
             description: description
-    }
+        }
         props.addClothing(newClothing)
         navigate("/collection")
     }
@@ -38,66 +38,93 @@ export default function AddClothing(props: AddClothingProps) {
     return (
         <div>
             <form onSubmit={onSaveClothing}>
-                <TextField
-                    label="Name"
-                    value={name}
-                    onChange={(event) =>{
-                        setName(event.target.value);
-                    }}
-                    />
-                <TextField
-                    label="Type"
-                    value={type}
-                    onChange={(event) =>{
-                        setType(event.target.value);
-                    }}
-                />
-                <TextField
-                    label="Size"
-                    value={size}
-                    onChange={(event) =>{
-                        setSize(event.target.value);
-                    }}
-                />
-                <TextField
-                    label="Color"
-                    value={color}
-                    onChange={(event) =>{
-                        setColor(event.target.value);
-                    }}
-                />
-                <TextField
-                    label="Price"
-                    value={price.toString()} // Konvertiert die Zahl zu einem String
-                    onChange={(event) => {
-                        setPrice(parseFloat(event.target.value)); // Konvertiert den String zurück zu einer Zahl
-                    }}
-                />
-                <TextField
-                    label="Brand"
-                    value={brand}
-                    onChange={(event) =>{
-                        setBrand(event.target.value);
-                    }}
-                />
-                <TextField
-                    label="Material"
-                    value={material}
-                    onChange={(event) =>{
-                        setMaterial(event.target.value);
-                    }}
-                />
-                <TextField
-                    label="Description"
-                    value={description}
-                    onChange={(event) =>{
-                        setDescription(event.target.value);
-                    }}
-                />
-                <Button type="submit" variant="outlined" sx={{ color: 'white', borderColor: 'darkblue', backgroundColor: 'darkblue', '&:hover': { backgroundColor: 'navy' } }}>
-                    Speichern
-                </Button>
-
+                <Grid container spacing={2}>
+                    <Grid item xs={12}>
+                        <TextField
+                            fullWidth
+                            label="Name"
+                            value={name}
+                            onChange={(event) =>{
+                                setName(event.target.value);
+                            }}
+                        />
+                    </Grid>
+                    <Grid item xs={12}>
+                        <TextField
+                            fullWidth
+                            label="Type"
+                            value={type}
+                            onChange={(event) =>{
+                                setType(event.target.value);
+                            }}
+                        />
+                    </Grid>
+                    <Grid item xs={12} sm={6}>
+                        <TextField
+                            fullWidth
+                            label="Size"
+                            value={size}
+                            onChange={(event) =>{
+                                setSize(event.target.value);
+                            }}
+                        />
+                    </Grid>
+                    <Grid item xs={12} sm={6}>
+                        <TextField
+                            fullWidth
+                            label="Color"
+                            value={color}
+                            onChange={(event) =>{
+                                setColor(event.target.value);
+                            }}
+                        />
+                    </Grid>
+                    <Grid item xs={12} sm={6}>
+                        <TextField
+                            fullWidth
+                            label="Price"
+                            value={price.toString()}
+                            onChange={(event) => {
+                                setPrice(parseFloat(event.target.value));
+                            }}
+                        />
+                    </Grid>
+                    <Grid item xs={12} sm={6}>
+                        <TextField
+                            fullWidth
+                            label="Brand"
+                            value={brand}
+                            onChange={(event) =>{
+                                setBrand(event.target.value);
+                            }}
+                        />
+                    </Grid>
+                    <Grid item xs={12}>
+                        <TextField
+                            fullWidth
+                            label="Material"
+                            value={material}
+                            onChange={(event) =>{
+                                setMaterial(event.target.value);
+                            }}
+                        />
+                    </Grid>
+                    <Grid item xs={12}>
+                        <TextField
+                            fullWidth
+                            label="Description"
+                            value={description}
+                            onChange={(event) =>{
+                                setDescription(event.target.value);
+                            }}
+                        />
+                    </Grid>
+                    <Grid item xs={12}>
+                        <Button type="submit" variant="outlined" sx={{ color: 'white', borderColor: 'darkblue', backgroundColor: 'darkblue', '&:hover': { backgroundColor: 'navy' } }}>
+                            Speichern
+                        </Button>
+                    </Grid>
+                </Grid>
             </form>
         </div>
     )
