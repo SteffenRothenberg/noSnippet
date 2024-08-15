@@ -10,7 +10,7 @@ import {LoginPage} from "./routesAndLoginData/LoginPage";
 import HomePage from "./HomePage";
 import ProtectedRoutes from "./routesAndLoginData/ProtectedRoutes";
 import Collection from "./collection.gallery/Collection";
-import AddClothing from "./addProduct/addClothing";
+import AddClothing from "./addProduct/AddClothing";
 import ClothingDetailCard from "./clothingDetail/ClothingDetailCard";
 
 function App() {

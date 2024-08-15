@@ -20,8 +20,8 @@ export default function useCollection() {
                 console.error(error)
             })
     }
-    function addClothing(newAlbum: NewClothing) {
-        axios.post("/api/collection", newAlbum)
+    function addClothing(newClothing: NewClothing) {
+        axios.post("/api/collection", newClothing)
             .then(() => loadCollection())
             .catch(() => console.error("post on /api/Request was not successful"))
     }

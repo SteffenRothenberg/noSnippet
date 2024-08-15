@@ -1,9 +1,10 @@
-import {useEffect, useState} from "react";
-import {toast} from "react-toastify";
+import { useState, useEffect } from "react";
 import axios from "axios";
+import { toast } from "react-toastify";
 import {UserModel} from "../model/User";
 
-export default function useUser() {
+//eslint-disable-next-line
+export default function UseUser() {
     const [user, setUser] = useState();
     const [isLoading, setIsLoading] = useState(true);
 
@@ -63,5 +64,4 @@ export default function useUser() {
     }
 
     return { user, login, logout, isLoading, createUser};
-
 }

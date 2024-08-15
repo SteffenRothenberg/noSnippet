@@ -1,8 +1,8 @@
 import {NewClothing} from "../model/Cloathing";
 import {FormEvent, useState} from "react";
 import {useNavigate} from "react-router-dom";
-import {css, TextField} from "@mui/material";
-import './addClothing.css'
+import {Button, TextField} from "@mui/material";
+import './AddClothing.css'
 
 type AddClothingProps = {
     addClothing: (newClothing: NewClothing) => void
@@ -94,6 +94,9 @@ export default function AddClothing(props: AddClothingProps) {
                         setDescription(event.target.value);
                     }}
                 />
+                <Button type="submit" variant="outlined" sx={{ color: 'white', borderColor: 'darkblue', backgroundColor: 'darkblue', '&:hover': { backgroundColor: 'navy' } }}>
+                    Speichern
+                </Button>
 
             </form>
         </div>

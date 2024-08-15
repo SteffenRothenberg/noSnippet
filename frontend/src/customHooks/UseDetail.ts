@@ -1,10 +1,10 @@
-import React, {ChangeEvent, useEffect, useState} from "react";
+import React, {useEffect, useState} from "react";
 import {Clothing} from "../model/Cloathing";
 import {useParams} from "react-router-dom";
 import axios from "axios";
 import {toast} from "react-toastify";
 
-export default function useDetail(){
+export default function UseDetail(){
     const [clothing, setClothing] = useState<Clothing>();
     const [editing, setEditing] = useState(false);
     const [editedClothing, setEditedClothing] = useState<Clothing>({
@@ -47,7 +47,7 @@ export default function useDetail(){
     function handleFormSubmit(event: React.FormEvent<HTMLFormElement>){
         event.preventDefault();
         axios
-            .put("/api/collection" + id, editedClothing)
+            .put("/api/collection/" + id, editedClothing)
             .then((response) => {
             setClothing(response.data);
             setEditing(false);
