@@ -1,7 +1,7 @@
-import {Clothing} from "../model/Cloathing";
-import {useState} from "react";
+import { Clothing } from "../model/Cloathing";
+import { useState } from "react";
 import useCollection from "../customHooks/UseCollection";
-import {MenuItem, TextField} from "@mui/material";
+import { MenuItem, TextField } from "@mui/material";
 import ClothingCard from "../card/ClothingCard";
 import "./Collection.css";
 
@@ -16,17 +16,19 @@ enum SearchOption {
     Brand = "brand"
 }
 
-export default function Collection(props: CollectionProps){
+export default function Collection(props: CollectionProps) {
     const [searchTerm, setSearchTerm] = useState("");
     const [searchOption, setSearchOption] = useState(SearchOption.Name);
-    const {collection} = useCollection();
+    const { collection } = useCollection();
 
     const handleSearchTermChange = (event: React.ChangeEvent<HTMLInputElement>) => {
         setSearchTerm(event.target.value);
     };
+
     const handleSearchOptionChange = (event: React.ChangeEvent<HTMLInputElement>) => {
         setSearchOption(event.target.value as SearchOption);
     };
+
     const filteredCollection = collection.filter((clothing) =>
         clothing[searchOption].toLowerCase().includes(searchTerm.toLowerCase())
     );
@@ -53,7 +55,10 @@ export default function Collection(props: CollectionProps){
             </div>
             <div className="style">
                 {filteredCollection.map((card: Clothing) => (
-                    <ClothingCard clothing={card} />
+                    <ClothingCard
+                        key={card.id}  // Hier wird der `key`-Prop hinzugefügt
+                        clothing={card}
+                    />
                 ))}
             </div>
         </div>

@@ -1,4 +1,4 @@
-import { Link, NavLink, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { Button, Typography, AppBar, Toolbar } from "@mui/material";
 import { useState } from "react";
 
@@ -24,6 +24,14 @@ export default function Header(props: Props) {
 
     function handleLogoClick() {
         navigate("/");
+    }
+
+    function navigateToCollection() {
+        navigate("/collection");
+    }
+
+    function navigateToAdd() {
+        navigate("/collection/add");
     }
 
     return (
@@ -54,8 +62,7 @@ export default function Header(props: Props) {
                 </Typography>
                 <div className="navbar">
                     <Button
-                        component={Link}
-                        to="/collection"
+                        onClick={navigateToCollection}
                         color="inherit"
                         sx={{
                             color: "#ffffff",
@@ -69,8 +76,7 @@ export default function Header(props: Props) {
                         Your Collection
                     </Button>
                     <Button
-                        component={NavLink}
-                        to="/collection/add"
+                        onClick={navigateToAdd}
                         color="inherit"
                         sx={{
                             color: "#ffffff",

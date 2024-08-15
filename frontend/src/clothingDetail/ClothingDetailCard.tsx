@@ -1,4 +1,4 @@
-import {useNavigate} from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import useDetail from "../customHooks/UseDetail";
 import {
     Button,
@@ -9,36 +9,66 @@ import {
     Container,
     Grid,
     TextField,
-    Typography
+    Typography,
 } from "@mui/material";
+import { styled } from "@mui/material/styles";
 
 type ClothingDetailCardProps = {
     deleteClothing: (id: string) => void;
 };
 
-export default function ClothingDetailCard(props: ClothingDetailCardProps){
-    const {editedClothing, clothing, editing, handleFormSubmit, editOnClick, clothingInputChange} = useDetail();
+const StyledCard = styled(Card)({
+    backgroundColor: '#003366', // Dark blue background
+    color: '#ffffff', // White text color
+    borderRadius: '8px',
+    boxShadow: '0 4px 8px rgba(0, 0, 0, 0.2)',
+    margin: '50px',
+    padding: '16px',
+});
+
+const StyledButton = styled(Button)({
+    backgroundColor: '#7f00ff', // Initial button color
+    color: '#ffffff',
+    '&:hover': {
+        backgroundColor: '#6a0dad', // Darker purple on hover
+    },
+    margin: '8px',
+});
+
+export default function ClothingDetailCard(props: ClothingDetailCardProps) {
+    const {
+        editedClothing,
+        clothing,
+        editing,
+        handleFormSubmit,
+        editOnClick,
+        clothingInputChange,
+    } = useDetail();
     const navigate = useNavigate();
 
-    function onDeleteClick(){
-        if(clothing) {
+    function onDeleteClick() {
+        if (clothing) {
             props.deleteClothing(clothing.id);
         }
-        navigate("/clothing");
+        navigate("/collection");
     }
-    return(
-        <Card className="clothing-detail">
-            {clothing ?(
+
+    return (
+        <StyledCard>
+            {clothing ? (
                 editing ? (
                     <form onSubmit={handleFormSubmit}>
-                        <CardHeader title="Kleidung bearbeiten"/>
-                        <CardContent className="enterTextfield">
+                        <CardHeader title="Edit Clothing" />
+                        <CardContent className="enterTextField">
                             <TextField
                                 label="Name"
                                 name="name"
                                 value={editedClothing.name}
                                 onChange={clothingInputChange}
                                 fullWidth
+                                margin="normal"
+                                InputProps={{ style: { color: 'white' } }}
+                                InputLabelProps={{ style: { color: '#ffffff' } }}
                             />
                             <TextField
                                 label="Type"
@@ -46,6 +76,9 @@ export default function ClothingDetailCard(props: ClothingDetailCardProps){
                                 value={editedClothing.type}
                                 onChange={clothingInputChange}
                                 fullWidth
+                                margin="normal"
+                                InputProps={{ style: { color: 'white' } }}
+                                InputLabelProps={{ style: { color: '#ffffff' } }}
                             />
                             <TextField
                                 label="Size"
@@ -53,6 +86,9 @@ export default function ClothingDetailCard(props: ClothingDetailCardProps){
                                 value={editedClothing.size}
                                 onChange={clothingInputChange}
                                 fullWidth
+                                margin="normal"
+                                InputProps={{ style: { color: 'white' } }}
+                                InputLabelProps={{ style: { color: '#ffffff' } }}
                             />
                             <TextField
                                 label="Color"
@@ -60,6 +96,9 @@ export default function ClothingDetailCard(props: ClothingDetailCardProps){
                                 value={editedClothing.color}
                                 onChange={clothingInputChange}
                                 fullWidth
+                                margin="normal"
+                                InputProps={{ style: { color: 'white' } }}
+                                InputLabelProps={{ style: { color: '#ffffff' } }}
                             />
                             <TextField
                                 label="Price"
@@ -67,6 +106,9 @@ export default function ClothingDetailCard(props: ClothingDetailCardProps){
                                 value={editedClothing.price}
                                 onChange={clothingInputChange}
                                 fullWidth
+                                margin="normal"
+                                InputProps={{ style: { color: 'white' } }}
+                                InputLabelProps={{ style: { color: '#ffffff' } }}
                             />
                             <TextField
                                 label="Brand"
@@ -74,6 +116,9 @@ export default function ClothingDetailCard(props: ClothingDetailCardProps){
                                 value={editedClothing.brand}
                                 onChange={clothingInputChange}
                                 fullWidth
+                                margin="normal"
+                                InputProps={{ style: { color: 'white' } }}
+                                InputLabelProps={{ style: { color: '#ffffff' } }}
                             />
                             <TextField
                                 label="Material"
@@ -81,6 +126,9 @@ export default function ClothingDetailCard(props: ClothingDetailCardProps){
                                 value={editedClothing.material}
                                 onChange={clothingInputChange}
                                 fullWidth
+                                margin="normal"
+                                InputProps={{ style: { color: 'white' } }}
+                                InputLabelProps={{ style: { color: '#ffffff' } }}
                             />
                             <TextField
                                 label="Description"
@@ -88,34 +136,39 @@ export default function ClothingDetailCard(props: ClothingDetailCardProps){
                                 value={editedClothing.description}
                                 onChange={clothingInputChange}
                                 fullWidth
+                                margin="normal"
+                                InputProps={{ style: { color: 'white' } }}
+                                InputLabelProps={{ style: { color: '#ffffff' } }}
                             />
                         </CardContent>
                         <CardActions>
-                            <Button type="submit" variant="contained" color="warning">
-                                Speichern
-                            </Button>
+                            <StyledButton type="submit" variant="contained">
+                                Save
+                            </StyledButton>
                         </CardActions>
                     </form>
-                ):(
+                ) : (
                     <div>
                         <Container maxWidth="sm">
-                            <CardHeader title="Details:"/>
+                            <CardHeader title="Clothing Details" />
                             <CardContent>
                                 <Typography variant="body1">Name: {clothing.name}</Typography>
-                                <Typography variant="body1">Name: {clothing.type}</Typography>
-                                <Typography variant="body1">Name: {clothing.size}</Typography>
-                                <Typography variant="body1">Name: {clothing.color}</Typography>
-                                <Typography variant="body1">Name: {clothing.price}</Typography>
-                                <Typography variant="body1">Name: {clothing.brand}</Typography>
-                                <Typography variant="body1">Name: {clothing.material}</Typography>
-                                <Typography variant="body1">Name: {clothing.description}</Typography>
+                                <Typography variant="body1">Type: {clothing.type}</Typography>
+                                <Typography variant="body1">Size: {clothing.size}</Typography>
+                                <Typography variant="body1">Color: {clothing.color}</Typography>
+                                <Typography variant="body1">Price: ${clothing.price}</Typography>
+                                <Typography variant="body1">Brand: {clothing.brand}</Typography>
+                                <Typography variant="body1">Material: {clothing.material}</Typography>
+                                <Typography variant="body1">Description: {clothing.description}</Typography>
                             </CardContent>
                             <Grid container spacing={2} justifyContent="space-evenly" mt={2}>
                                 <CardActions>
-                                    <Button onClick={editOnClick} variant="contained" color="warning">
-                                    </Button>
-                                    <Button onClick={onDeleteClick} variant="contained" color="error">
-                                    </Button>
+                                    <StyledButton onClick={editOnClick} variant="contained">
+                                        Edit
+                                    </StyledButton>
+                                    <StyledButton onClick={onDeleteClick} variant="contained" color="error">
+                                        Delete
+                                    </StyledButton>
                                 </CardActions>
                             </Grid>
                         </Container>
@@ -124,7 +177,6 @@ export default function ClothingDetailCard(props: ClothingDetailCardProps){
             ) : (
                 <div>Loading...</div>
             )}
-        </Card>
-    )
-
+        </StyledCard>
+    );
 }

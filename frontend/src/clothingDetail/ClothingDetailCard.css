@@ -1,12 +1,26 @@
+/* ClothingDetailCard.css */
 .clothing-detail {
-    background-color: orange;
-    border: 1px black solid;
     margin: 50px;
-    border-radius: 5px;
-    padding: 10px;
+    border-radius: 8px;
+    padding: 16px;
     color: white;
 }
+
 .enterTextField {
     margin-top: 1rem;
     margin-bottom: 1rem;
+}
+
+/* Additional styling for Material-UI components if needed */
+.MuiCardHeader-title {
+    color: #ffffff;
+}
+
+.MuiTypography-body1 {
+    color: #ffffff;
+}
+
+.MuiButton-root {
+    border-radius: 4px;
+    padding: 8px 16px;
 }
