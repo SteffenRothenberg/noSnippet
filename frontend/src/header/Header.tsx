@@ -34,6 +34,10 @@ export default function Header(props: Props) {
         navigate("/collection/add");
     }
 
+    function navigateToWallet() { // Hinzugefügt: Funktion zum Navigieren zur Wallet-Seite
+        navigate("/wallet");
+    }
+
     return (
         <AppBar position="static" sx={{ bgcolor: "#0d0a63" }}>
             <Toolbar sx={{ justifyContent: "space-between" }}>
@@ -88,6 +92,20 @@ export default function Header(props: Props) {
                         }}
                     >
                         Create Clothing
+                    </Button>
+                    <Button
+                        onClick={navigateToWallet} // Hinzugefügt: Button für Wallet
+                        color="inherit"
+                        sx={{
+                            color: "#ffffff",
+                            marginRight: "8px",
+                            "&:hover": {
+                                backgroundColor: "#4b0082",
+                            },
+                            transition: "background-color 0.3s ease",
+                        }}
+                    >
+                        Wallet
                     </Button>
                     <Button
                         color="inherit"
