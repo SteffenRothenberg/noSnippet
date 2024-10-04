@@ -16,14 +16,20 @@ public class ClothingController {
 
     private final ClothingService clothingService;
 
-    @GetMapping
+    @GetMapping("/all")
     public List<Clothing> getAll() {
         return clothingService.getAll();
     }
+    @GetMapping
+    public List<Clothing> getAllByUserId(@RequestParam String userId) {
+        return clothingService.getAllByUser(userId);
+    }
 
     @PostMapping
-    public Clothing addClothing(@RequestBody Clothing myClothing) {
-        return clothingService.addClothing(myClothing);
+    public Clothing addClothing(@RequestBody Clothing clothing, @RequestParam String userId) {
+        Clothing newClothing = new Clothing(clothing.id(), clothing.name(), clothing.type(), clothing.size(), clothing.color(),
+                clothing.price(), clothing.brand(), clothing.material(), clothing.description(), userId);
+        return clothingService.addClothing(newClothing);
     }
 
     @GetMapping("{id}")
@@ -42,4 +48,5 @@ public class ClothingController {
     public void deleteClothing(@PathVariable String id){
         clothingService.deleteClothing(id);
     }
+
 }

@@ -30,4 +30,7 @@ public class ClothingService {
     public void deleteClothing(String id) {
         clothingRepoInterface.deleteById(id);
     }
+    public List<Clothing> getAllByUser(String userId) {
+        return clothingRepoInterface.findByUserId(userId);  // Neue Methode im Repository
+    }
 }

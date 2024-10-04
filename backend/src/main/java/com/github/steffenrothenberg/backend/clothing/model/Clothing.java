@@ -18,6 +18,7 @@ public record Clothing(
         Double price,
         String brand,
         String material,
-        String description
+        String description,
+        String userId
 ) {
 }
