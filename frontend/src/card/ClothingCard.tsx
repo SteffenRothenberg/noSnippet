@@ -1,4 +1,4 @@
-import { Clothing } from "../model/Cloathing";
+import { Clothing } from "../model/Clothing";
 import { useNavigate } from "react-router-dom";
 import { Button, Card, CardContent, Typography, Box } from "@mui/material";
 import './ClothingCard.css';

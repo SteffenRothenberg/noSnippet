@@ -1,5 +1,5 @@
 import {useEffect, useState} from "react";
-import {Clothing, NewClothing} from "../model/Cloathing";
+import {Clothing, NewClothing} from "../model/Clothing";
 import axios from "axios";
 import {toast} from "react-toastify";
 

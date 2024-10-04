@@ -1,4 +1,4 @@
-import { Clothing } from "./Cloathing";
+import { Clothing } from "./Clothing";
 
 export class Wallet {
     private items: Clothing[] = [];

@@ -15,7 +15,7 @@ import {
 } from "@mui/material";
 import QRCode from "qrcode.react";
 import useWallet from "../customHooks/UseWallet";
-import { Clothing } from "../model/Cloathing";
+import { Clothing } from "../model/Clothing";
 
 type WalletManagerProps = {
     clothingItems: Clothing[];

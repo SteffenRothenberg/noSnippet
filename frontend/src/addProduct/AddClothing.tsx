@@ -1,4 +1,4 @@
-import {NewClothing} from "../model/Cloathing";
+import {NewClothing} from "../model/Clothing";
 import {FormEvent, useState} from "react";
 import {useNavigate} from "react-router-dom";
 import {Button, TextField, Grid} from "@mui/material";

@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Clothing } from "../model/Cloathing";
+import { Clothing } from "../model/Clothing";
 
 export default function useWallet() {
     const [wallet, setWallet] = useState<Clothing[]>([]);

@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Clothing } from "../model/Cloathing";
+import { Clothing } from "../model/Clothing";
 import { useParams } from "react-router-dom";
 import axios from "axios";
 import { toast } from "react-toastify";

@@ -1,4 +1,4 @@
-import { Clothing } from "../model/Cloathing";
+import { Clothing } from "../model/Clothing";
 import { useState } from "react";
 import useCollection from "../customHooks/UseCollection";
 import { MenuItem, TextField } from "@mui/material";
