@@ -6,6 +6,7 @@
 app = 'nosnippet'
 
 [build]
+  image = "nosnippet_latest:v1"
 
 [http_service]
   internal_port = 8080
