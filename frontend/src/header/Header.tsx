@@ -34,45 +34,29 @@ export default function Header(props: Props) {
         navigate("/collection/add");
     }
 
-    function navigateToWallet() { // Hinzugefügt: Funktion zum Navigieren zur Wallet-Seite
+    function navigateToWallet() {
         navigate("/wallet");
     }
 
     return (
-        <AppBar position="static" sx={{ bgcolor: "#0d0a63" }}>
-            <Toolbar sx={{ justifyContent: "space-between" }}>
-                <Typography
-                    variant="subtitle1"
-                    sx={{
-                        flexGrow: 1,
-                        color: "#ffffff",
-                    }}
-                >
+        <AppBar position="static" className="header">
+            <Toolbar className="toolbar">
+                <Typography variant="subtitle1" className="logo-text" onClick={handleLogoClick}>
                     Manage your Wardrobe
                 </Typography>
-                <Typography
-                    variant="h5"
-                    component="div"
-                    sx={{
-                        flexGrow: 1,
-                        color: "#ffffff",
-                        marginLeft: "16px",
-                        cursor: "pointer",
-                        fontWeight: "bold",
-                    }}
-                    onClick={handleLogoClick}
-                >
+                <Typography variant="h5" component="div" className="title" onClick={handleLogoClick}>
                     noSnippet
                 </Typography>
                 <div className="navbar">
                     <Button
+                        className="navbar-button"
                         onClick={navigateToCollection}
-                        color="inherit"
                         sx={{
+                            backgroundColor: "#3498db", /* Sichtbare Hintergrundfarbe */
                             color: "#ffffff",
                             marginRight: "8px",
                             "&:hover": {
-                                backgroundColor: "#4b0082",
+                                backgroundColor: "#4b0082", /* Hover-Effekt */
                             },
                             transition: "background-color 0.3s ease",
                         }}
@@ -80,9 +64,10 @@ export default function Header(props: Props) {
                         Your Collection
                     </Button>
                     <Button
+                        className="navbar-button"
                         onClick={navigateToAdd}
-                        color="inherit"
                         sx={{
+                            backgroundColor: "#3498db",
                             color: "#ffffff",
                             marginRight: "8px",
                             "&:hover": {
@@ -94,9 +79,10 @@ export default function Header(props: Props) {
                         Create Clothing
                     </Button>
                     <Button
-                        onClick={navigateToWallet} // Hinzugefügt: Button für Wallet
-                        color="inherit"
+                        className="navbar-button"
+                        onClick={navigateToWallet}
                         sx={{
+                            backgroundColor: "#3498db",
                             color: "#ffffff",
                             marginRight: "8px",
                             "&:hover": {
@@ -108,9 +94,10 @@ export default function Header(props: Props) {
                         Wallet
                     </Button>
                     <Button
-                        color="inherit"
+                        className="navbar-button"
                         onClick={handleLogout}
                         sx={{
+                            backgroundColor: "#3498db",
                             color: "#ffffff",
                             marginRight: "8px",
                             "&:hover": {

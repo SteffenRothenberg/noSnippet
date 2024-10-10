@@ -8,6 +8,5 @@ import java.util.List;
 
 @Repository
 public interface ClothingRepoInterface extends MongoRepository<Clothing, String> {
-    // Benutzerdefinierte Methode für die Abfrage nach userId
-    List<Clothing> findByUserId(String userId);  // MongoDB erstellt automatisch die Query basierend auf dem Methodennamen
+    List<Clothing> findByUserId(String userId);
 }
