@@ -28,7 +28,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
 @SpringBootTest
-public class ClothingControllerTest {
+public class ClothingControllerIntegrationTest {
 
     @Autowired
     private WebApplicationContext context;
