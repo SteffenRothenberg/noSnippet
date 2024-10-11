@@ -58,7 +58,7 @@ jobs:
         with:
           name: app2.jar
           path: backend/target
-      - uses: superfly/flyctl-actions/setup-flyctl@master
+      - uses: superfly/flyctl-actions/setup-flyctl@v1
         with:
           version: latest
       - run: flyctl deploy # Deployt die Anwendung
