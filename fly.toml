@@ -3,10 +3,11 @@
 # See https://fly.io/docs/reference/configuration/ for information about how to use this file.
 #
 
-app = 'nosnippet'
+app = "nosnippet"
 
 [build]
-  image = "nosnippet_latest:v1"
+  image = "steffenrothenberg/nosnippet_latest:v1"
+  PRIMARY_REGION = "fra"
 
 [http_service]
   internal_port = 8080
