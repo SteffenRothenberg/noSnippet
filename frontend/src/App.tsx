@@ -4,7 +4,6 @@ import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
 import Header from "./header/Header";
 import React, { useEffect } from "react";
 import useCollection from "./customHooks/UseCollection";
-import useWallet from "./customHooks/UseWallet";
 import { SignUpPage } from "./routesAndLoginData/SignUpPage";
 import { LoginPage } from "./routesAndLoginData/LoginPage";
 import HomePage from "./HomePage";
@@ -17,7 +16,6 @@ import WalletManager from "./components/WalletManager";
 function App() {
     const { collection, addClothing, deleteClothing, loadCollection } = useCollection();
     const { user, login, logout, isLoading, createUser } = useUser();
-    const { wallet, addToWallet } = useWallet();
 
     useEffect(() => {
         if (user) {
