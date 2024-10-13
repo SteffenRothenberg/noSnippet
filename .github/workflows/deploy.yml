@@ -57,7 +57,7 @@ jobs:
       - uses: actions/download-artifact@v3
         with:
           name: app2.jar
-          path: backend/target
+          path: backend/target/app2.jar
       - uses: superfly/flyctl-actions/setup-flyctl@v1
       - run: flyctl deploy
         env:
