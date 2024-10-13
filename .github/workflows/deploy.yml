@@ -42,7 +42,7 @@ jobs:
       - uses: actions/upload-artifact@v3
         with:
           name: app2.jar
-          path: backend/src/main/resources/static/app2.jar
+          path: backend/target/app2.jar  # Pfad zur richtigen JAR-Datei korrigiert
 
   deploy-fly:
     runs-on: ubuntu-latest
@@ -57,7 +57,7 @@ jobs:
       - uses: actions/download-artifact@v3
         with:
           name: app2.jar
-          path: backend/target/app2.jar
+          path: backend/target/app2.jar  # Pfad für den Download-Schritt korrigiert
       - uses: superfly/flyctl-actions/setup-flyctl@v1
       - run: flyctl deploy
         env:
