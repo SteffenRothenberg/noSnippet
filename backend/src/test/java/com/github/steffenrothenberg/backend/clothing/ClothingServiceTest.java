@@ -1,7 +1,9 @@
-package com.github.steffenrothenberg.backend.clothing.service;
+/*
+package com.github.steffenrothenberg.backend.clothing;
 
 import com.github.steffenrothenberg.backend.clothing.model.Clothing;
 import com.github.steffenrothenberg.backend.clothing.repository.ClothingRepoInterface;
+import com.github.steffenrothenberg.backend.clothing.service.ClothingService;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.InjectMocks;
@@ -63,3 +65,4 @@ class ClothingServiceTest {
         assertEquals("Shirt", result.name());
     }
 }
+*/

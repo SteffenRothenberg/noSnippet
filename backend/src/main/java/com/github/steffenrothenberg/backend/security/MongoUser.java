@@ -2,6 +2,7 @@ package com.github.steffenrothenberg.backend.security;
 
 import lombok.Getter;
 import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.index.Indexed;
 import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -14,6 +15,8 @@ public class MongoUser implements UserDetails {
         @Getter
         @Id
         private String id;
+
+        @Indexed(unique = true)  // Eindeutiger Index auf 'username'
         private String username;
         private String password;
 
@@ -26,10 +29,6 @@ public class MongoUser implements UserDetails {
                 this.id = id;
                 this.username = username;
                 this.password = password;
-        }
-
-        public void setId(String id) {
-                this.id = id;
         }
 
         // Getter und Setter für 'username'
@@ -76,5 +75,4 @@ public class MongoUser implements UserDetails {
         public boolean isEnabled() {
                 return true;
         }
-
 }

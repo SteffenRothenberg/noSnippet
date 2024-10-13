@@ -102,10 +102,15 @@
             <version>6.0.3</version>
             <scope>test</scope>
         </dependency>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <scope>test</scope>
+        </dependency>
     </dependencies>
 
     <build>
-        <finalName>app</finalName>
+        <finalName>app2</finalName>
         <plugins>
             <plugin>
                 <groupId>org.springframework.boot</groupId>
