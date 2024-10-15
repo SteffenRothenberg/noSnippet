@@ -11,7 +11,7 @@ LABEL maintainer="nosnippet"
 WORKDIR /app
 
 # Kopiere die fertige JAR-Datei aus dem target-Ordner ins Container-Verzeichnis
-COPY backend/target/app2.jar /app/app2.jar
+COPY target/app2.jar /app/app2.jar
 
 # Exponiere den Port, den die App verwenden wird (z. B. 8080)
 EXPOSE 8080
