@@ -50,9 +50,9 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - name: Build Docker Image
-        run: docker build -t steffenrothenberg/nosnippet_latest:v1 .
+        run: docker build -t steffenrothenberg/nosnippet .
       - name: Push Docker Image
-        run: docker push steffenrothenberg/nosnippet_latest:v1
+        run: docker push steffenrothenberg/nosnippet
 
   deploy-fly:
     runs-on: ubuntu-latest
