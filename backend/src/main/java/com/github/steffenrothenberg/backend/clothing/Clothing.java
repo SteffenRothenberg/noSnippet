@@ -1,4 +1,4 @@
-package com.github.steffenrothenberg.backend.clothing.model;
+package com.github.steffenrothenberg.backend.clothing;
 
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Size;

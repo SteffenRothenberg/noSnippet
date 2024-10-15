@@ -1,7 +1,5 @@
-package com.github.steffenrothenberg.backend.clothing.controller;
+package com.github.steffenrothenberg.backend.clothing;
 
-import com.github.steffenrothenberg.backend.clothing.model.Clothing;
-import com.github.steffenrothenberg.backend.clothing.service.ClothingService;
 import com.github.steffenrothenberg.backend.security.MongoUser;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;

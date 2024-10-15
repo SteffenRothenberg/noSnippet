@@ -1,7 +1,5 @@
-package com.github.steffenrothenberg.backend.clothing.service;
+package com.github.steffenrothenberg.backend.clothing;
 
-import com.github.steffenrothenberg.backend.clothing.model.Clothing;
-import com.github.steffenrothenberg.backend.clothing.repository.ClothingRepoInterface;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 

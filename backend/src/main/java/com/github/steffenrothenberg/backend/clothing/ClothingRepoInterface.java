@@ -1,6 +1,5 @@
-package com.github.steffenrothenberg.backend.clothing.repository;
+package com.github.steffenrothenberg.backend.clothing;
 
-import com.github.steffenrothenberg.backend.clothing.model.Clothing;
 import org.springframework.data.mongodb.repository.MongoRepository;
 import org.springframework.stereotype.Repository;
 
