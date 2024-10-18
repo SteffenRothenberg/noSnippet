@@ -1,7 +1,7 @@
-package com.github.steffenrothenberg.backend.clothing.controller;
+package com.github.steffenrothenberg.backend.clothing;
 
-import com.github.steffenrothenberg.backend.clothing.model.Clothing;
-import com.github.steffenrothenberg.backend.clothing.repository.ClothingRepoInterface;
+import com.github.steffenrothenberg.backend.clothing.Clothing;
+import com.github.steffenrothenberg.backend.clothing.ClothingRepoInterface;
 import com.github.steffenrothenberg.backend.security.MongoUser;
 import com.github.steffenrothenberg.backend.security.MongoUserRepository;
 import org.junit.jupiter.api.BeforeEach;
