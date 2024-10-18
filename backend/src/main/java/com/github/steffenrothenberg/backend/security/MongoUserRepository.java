@@ -7,5 +7,6 @@ import java.util.Optional;
 
 @Repository
 public interface MongoUserRepository extends MongoRepository<MongoUser, String> {
+    // Methode zum Suchen eines Benutzers anhand des Benutzernamens
     Optional<MongoUser> findMongoUserByUsername(String username);
 }

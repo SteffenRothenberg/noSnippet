@@ -14,7 +14,15 @@ public class MongoUserDetailsService implements UserDetailsService {
 
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-        return mongoUserRepository.findMongoUserByUsername(username)
+        // Wir holen den Benutzer als MongoUser ab
+        MongoUser mongoUser = mongoUserRepository.findMongoUserByUsername(username)
                 .orElseThrow(() -> new UsernameNotFoundException("User with name: " + username + " not found!"));
+
+        // Rückgabe des Benutzers als UserDetails-Objekt
+        return new org.springframework.security.core.userdetails.User(
+                mongoUser.getUsername(),
+                mongoUser.getPassword(),
+                mongoUser.getAuthorities()
+        );
     }
 }

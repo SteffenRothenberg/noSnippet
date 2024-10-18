@@ -18,6 +18,9 @@ public class ClothingController {
 
     @GetMapping
     public List<Clothing> getAllByUserId(Authentication authentication) {
+        if (authentication == null || authentication.getPrincipal() == null) {
+            throw new ResponseStatusException(HttpStatus.UNAUTHORIZED, "Authentication required");
+        }
         MongoUser currentUser = (MongoUser) authentication.getPrincipal();
         String userId = currentUser.getId();
         return clothingService.getAllByUser(userId);
@@ -25,6 +28,9 @@ public class ClothingController {
 
     @PostMapping
     public Clothing addClothing(@RequestBody Clothing clothing, Authentication authentication) {
+        if (authentication == null || authentication.getPrincipal() == null) {
+            throw new ResponseStatusException(HttpStatus.UNAUTHORIZED, "Authentication required");
+        }
         MongoUser currentUser = (MongoUser) authentication.getPrincipal();
         String userId = currentUser.getId();
 
@@ -45,6 +51,9 @@ public class ClothingController {
 
     @GetMapping("{id}")
     public Clothing getClothingById(@PathVariable String id, Authentication authentication) {
+        if (authentication == null || authentication.getPrincipal() == null) {
+            throw new ResponseStatusException(HttpStatus.UNAUTHORIZED, "Authentication required");
+        }
         MongoUser currentUser = (MongoUser) authentication.getPrincipal();
         String userId = currentUser.getId();
 
@@ -59,6 +68,9 @@ public class ClothingController {
 
     @PutMapping(path = {"{id}/update", "{id}"})
     public Clothing editClothing(@PathVariable String id, @RequestBody Clothing clothingToEdit, Authentication authentication) {
+        if (authentication == null || authentication.getPrincipal() == null) {
+            throw new ResponseStatusException(HttpStatus.UNAUTHORIZED, "Authentication required");
+        }
         MongoUser currentUser = (MongoUser) authentication.getPrincipal();
         String userId = currentUser.getId();
 
@@ -75,6 +87,9 @@ public class ClothingController {
 
     @DeleteMapping("{id}")
     public void deleteClothing(@PathVariable String id, Authentication authentication) {
+        if (authentication == null || authentication.getPrincipal() == null) {
+            throw new ResponseStatusException(HttpStatus.UNAUTHORIZED, "Authentication required");
+        }
         MongoUser currentUser = (MongoUser) authentication.getPrincipal();
         String userId = currentUser.getId();
 

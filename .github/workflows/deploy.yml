@@ -3,7 +3,7 @@ name: Deployment auf fly.io
 on:
   push:
     branches:
-      - master
+      - master  # Passe an, falls du einen anderen Branch verwendest
 
 jobs:
   build-frontend:
@@ -42,23 +42,28 @@ jobs:
       - uses: actions/upload-artifact@v3
         with:
           name: app2.jar
-          path: backend/target/app2.jar
+          path: backend/target/app2.jar  # Pfad zur fertigen JAR-Datei
+
+  build-docker:
+    runs-on: ubuntu-latest
+    needs: build-backend
+    steps:
+      - uses: actions/checkout@v3
+      - name: Build Docker Image
+        run: docker build -t steffenrothenberg/nosnippet .
+      - name: Push Docker Image
+        run: docker push steffenrothenberg/nosnippet
 
   deploy-fly:
     runs-on: ubuntu-latest
-    needs: build-backend
+    needs: build-docker
     environment:
       name: production-fly.io
       url: https://nosnippet.fly.dev/
     env:
       FLY_API_TOKEN: ${{ secrets.FLY_API_KEY }}
     steps:
-      - uses: actions/checkout@v3
-      - uses: actions/download-artifact@v3
-        with:
-          name: app2.jar
-          path: backend/target/app2.jar
       - uses: superfly/flyctl-actions/setup-flyctl@v1
-      - run: flyctl deploy
+      - run: flyctl deploy --image steffenrothenberg/nosnippet_latest:v1
         env:
           FLY_API_TOKEN: ${{ secrets.FLY_API_KEY }}
